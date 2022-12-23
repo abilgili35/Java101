@@ -1,0 +1,51 @@
+import java.util.Scanner;
+
+public class RecursivePrimeNumber {
+
+    static boolean isAsal(int num, int div)
+    {
+        if(div == 1)
+        {
+            return true;
+        }
+        else{
+            if(num % div == 0)
+            {
+                return false;
+            }
+            else{
+                return isAsal(num, div - 1);
+            }
+        
+        }
+    }
+
+    static boolean recursiveAsal(int num)
+    {
+        if(num <= 1)
+        {
+            return false;
+        }
+        else{
+            return isAsal(num, num - 1);
+        }
+        
+    } 
+    public static void main(String[] args) {
+        int num;
+        Scanner s = new Scanner(System.in);
+        
+        do
+        {
+            System.out.print("Sayi Giriniz : ");
+            num = s.nextInt();
+            if(recursiveAsal(num))
+            {
+                 System.out.println(num + " sayisi ASALDIR.");
+            }
+            else{
+                System.out.println(num + " sayisi ASAL değildir.");
+            }
+        }while(num > 0);
+    }
+}
