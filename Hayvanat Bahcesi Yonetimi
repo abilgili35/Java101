@@ -1,0 +1,34 @@
+
+
+                                             ---------------------------------
+                                             |         <<Animal>>            |
+                                             ----------------------------------
+                                             |  - speciesName: String         |
+                                             |  - weight: double              |
+                                             |  - age: int                    |
+                                             ----------------------------------
+                                             |  + getName(): String           |
+                                             |  + setName(name:String):void   |
+                                             |  + getWeight() : double        |
+                                             |  + setWeight(weight:double): void|
+                                             |  + getAge() : int               |
+                                             |  + setAge(age:int) : void      |
+                                             |  + getDosage() : double        |
+                                             |  + getFeedSchedule() : Date[]  |
+                                             -----------------------------------
+                                             
+                                             -----------------------------------------------------------------------
+                                             |                   |                                                  |
+                   ---------------------------                                                                      |
+                   |                                             |                                                  |
+   -------------------------------                               |                                                  |
+   |        Rodent               |                   ---------------------------------------          ---------------------------------------
+   -------------------------------                   |           Feline                    |          |       Horses                        |
+   |  - tailLength: double       |                   ---------------------------------------          ---------------------------------------
+   -------------------------------                   | - isDomestic: boolean               |           |   - speed: int                     |
+   |  + getDosage(): double      |                   ---------------------------------------          ----------------------------------------
+   |  + getFeedSchedule() Date[] |                   | + setIsDomestic(isDomestic:boolean) |           |   +setSpeed(spped:int)             |
+   |  + getTailLength(): double  |                   | + getIsDomestic(): boolean          |           |   + getSpeed() : int               |
+   |  + setTailLength(length:double):void|           | + getDosage():double                |           |   + getDosage():double             |
+   ---------------------------------------           | + getFeedSchedule(): Date[]         |           |   + getFeedSchedule(): Date[]      |
+                                                     ---------------------------------------           -----------------------------------------
