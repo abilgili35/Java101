@@ -1,0 +1,40 @@
+
+
+
+
+                              -------------------------------
+                              |          Airline             |
+                              --------------------------------
+                              | -id: int                     |
+                              | -name: String                |
+                              --------------------------------
+                              | + getName(): String          |
+                              | + setName(name:String): void |
+                              | + getId(): int               |
+                              | + setId(id: int) : void      |
+                              --------------------------------
+            <-Composes       1|                |1            |1    Composes->
+          --------------------|                |             |-----------------------
+          | *                                  |Composes                             | * 
+------------------------------------           |                     -------------------------------
+|           << Airplane>>          |           |                     |            Flight           |
+------------------------------------           |                     -------------------------------
+| -isUnderMaintanenca: boolean     |           |                     | -id : int                   |
+| -pilotCount: int                 |           |                     | - destination : Airport     |
+------------------------------------           |                     | - departure: Airport        |
+                                               |                     | - takeoffTime               |
+                                               |                     | - landingTime               | 
+                                               |*                    | - pilot : Pilot             |
+                                ---------------------------------    | - assistantPilot: Pilot     |
+                                |          Pilot                |    | - airplane:Airpalne         |
+                                ---------------------------------    ------------------------------
+                                | - name: String                |    |  + flyToDestination(): void |
+                                | - experience : int            |    -------------------------------   1    Aggregates
+                                ---------------------------------     | 1                           |---------------------
+                                |  +getName() : String          |     |                                                   | 2
+                                |  +setName(name:String): void  |     | Aggregates                               ------------------------------     
+                                |  +getExperience(): int        | ----|                                          |      Airport               |
+                                |  +setExperience(exp: int) void| 2                                              ------------------------------
+                                |  + flyAirpalne() :Void                                                         | - name: String             |
+                                ---------------------------------                                                | - id : int                 |
+                                                                                                                --------------------------------
