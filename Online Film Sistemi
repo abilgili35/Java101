@@ -1,0 +1,44 @@
+
+
+
+                                           -----------------------------------
+                                           |    OnlineMovieSystem            |
+                                           -----------------------------------
+                                           | -movies : Movie[]                |
+                                           | -members : User[]                |
+                                           | -users : User[]                  |
+                                           -----------------------------------
+                                           | + listMovies(): Movie[]         |
+                                           | + sortMovies(): Movie[]         |
+                                           | + addMember(member: User)       |
+                                           | + cancelMember(member: User)    |
+                                           | + addUser(user : User)          |
+                                           | + cancelUser(user :User)        |
+                    <-Composes             -----------------------------------       Aggregates ->   
+                  -------------------------| 1                                |--------------------------- 
+                  | *                                                         1                           |*
+           --------------------------------                                                 ---------------------------------
+          |      << User >>              |                                                 |            Movie              |
+          --------------------------------                                                 ---------------------------------
+          | -credits: double             |                                                 | -id : int                     |
+          | -id : int                    |                                                 | - name : String               |
+          --------------------------------                                                 | - year: int                   |
+          | + buyCredits(amount double)  |                                                 | - rentPrice: double           |
+          | + getCredits(): double       |                                                 | - buyPrice : double           |
+          | + getId(): int               |                                                 ---------------------------------
+          | + setId(id: int)             |                                                 | + setBuyPrice(price:double)   |
+          | + requestMovie(movie: Movie) |                                                 | + getBuyPrice() : double      | 
+          | + getMembership()            |                                                  | + setRentPrice(price:double)  |
+          | + cancelMembership()         |                                                  | + getRentPrice(): double      |
+          --------------------------------                                                 --------------------------------                               
+ Extends |                              |                                                 
+ ---------                               |                                                 
+  |                                      |  Extends                                      
+  ------------------------------          ------------
+  |        MemberUser          |                      |
+  ------------------------------               --------------------------
+  | +rentMovie(movie Movie)     |              |      NonMemberUser     |    
+  | + buyMovie(movie:Movie)     |              --------------------------
+  -------------------------------              | + buyMovie(movie:Movie)|
+                                               --------------------------
+            
